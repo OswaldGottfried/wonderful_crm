@@ -1,28 +1,23 @@
 <template lang="pug">
   #app
-    .logo
-      a(href="#")
-        h1 wonderful
-        h5 crm
-      p
-        router-link(to="/calendar") Календарь
-        router-link(to="/clientbase") База клиентов
+    header
+      .logo
+        a(href="#")
+          h1 wonderful
+          h5 crm
+    Navigation
+    article.content
       router-view
-    // Calendar
-    // ClientBase
 </template>
 
 
 <script>
-// import routerView from "vue-router"
-// import Calendar from './pages/Calendar.vue'
-// import ClientBase from './pages/ClientBase.vue'
+import Navigation from './pages/Navigation.vue';
 
 export default {
   name: 'app',
   components: {
-    // Calendar,
-    // ClientBase
+    Navigation
   },
   computed: {
     username () {
@@ -58,7 +53,6 @@ export default {
     padding: 0;
     border: 0;
     font-size: 100%;
-    // font: inherit;   
     vertical-align: baseline;
 
   a
@@ -87,6 +81,11 @@ export default {
     font-family: Kelson Sans RU
     font-weight: 700
     src: url('./assets/fonts/Kelson Sans Bold RU.otf')
+ 
+  @font-face
+    font-family: Kelson Sans RU
+    font-weight: 400
+    src: url('./assets/fonts/Kelson Sans Regular RU.otf')
 
   @font-face
     font-family: Kelson Sans RU
@@ -101,19 +100,37 @@ export default {
     font-family: 'Graphik LCG'
     font-size: 16px
     font-weight: 400
+    display: grid
+    grid-gap: 1em
+    grid-template-columns: 1fr 300px;
+    grid-template-areas: "header header" "content nav"
 
-    .logo
-      max-width: 8%
-      margin: 62px 60px
-      h1
-        font-family: 'Kelson Sans RU'
-        font-weight: 700
-        font-size: 24px
-        margin-bottom: -4px
-      h5
-        font-family: 'Graphik'
-        font-weight: 300
-        font-size: 24px
-        font-size: 10px
-        color: #2E2A2B
+    header
+      grid-area: header
+      .logo
+        max-width: 8%
+        margin: 60px
+        h1
+          font-family: 'Kelson Sans RU'
+          font-weight: 700
+          font-size: 24px
+          margin-bottom: -4px
+        h5
+          font-family: 'Graphik'
+          font-weight: 300
+          font-size: 24px
+          font-size: 10px
+          color: #2E2A2B
+  
+    nav.navigation
+      grid-area: nav
+      
+    
+    article.content
+      grid-area: content
+      margin: 40px 245px
+
+
+
+
 </style>

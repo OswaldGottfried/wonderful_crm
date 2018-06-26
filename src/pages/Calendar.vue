@@ -26,8 +26,3 @@ export default {
     }
 }
 </script>
-
-<style lang="sass" scoped>
-    .calendar
-        margin: 80px 245px
-</style>

@@ -50,14 +50,12 @@ export default {
 <style lang="sass" scoped>
     .training
         display: flex
-        flex-direction: row
-        margin-bottom: 50px
-        justify-content: space-between;
-        width: 60%
-
+        justify-content: space-between
+        font-size: 18px
+        &:not(:last-child)
+            margin-bottom: 50px
 
         .date
-            // margin-right: 7em;
             h1 
                 font-family: 'Kelson Sans RU'
                 font-weight: 700
@@ -65,24 +63,21 @@ export default {
                 margin-bottom: -5px
             h3
                 font-family: 'Kelson Sans RU'
-                font-weight: 400
+                font-weight: 300
                 font-size: 18px
 
         .training-title
-            // margin-right: 5em
-            width: 30%
+            width: 200px
             .grid-content
                 display: grid
                 grid-template-columns: 25% 75%;
 
             header
                 h3
-                    font-size: 18px
                     margin-bottom: 20px
                     &:first-child
                         font-family: 'Kelson Sans RU'
-                        font-weight: 400
-                        // margin-right: 5px
+                        font-weight: 300
             ul.pupils
                 font-family: 'Graphik LCG'
                 font-weight: 400
@@ -91,6 +86,5 @@ export default {
                     grid-column-start: 2
                     margin-top: 10px
 
-        .trainer
 </style>
 
