@@ -7,7 +7,8 @@
           h5 crm
     Navigation
     article.content
-      router-view
+      transition(name="component-fade" mode="out-in")
+        router-view
 </template>
 
 
@@ -52,7 +53,6 @@ export default {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     vertical-align: baseline;
 
   a
@@ -101,8 +101,8 @@ export default {
     font-size: 16px
     font-weight: 400
     display: grid
-    grid-gap: 1em
-    grid-template-columns: 1fr 300px;
+    grid-gap: 0.5em
+    grid-template-columns: 1fr 20%;
     grid-template-areas: "header header" "content nav"
 
     header
@@ -122,15 +122,34 @@ export default {
           font-size: 10px
           color: #2E2A2B
   
-    nav.navigation
+    nav
       grid-area: nav
-      
     
     article.content
       grid-area: content
-      margin: 40px 245px
+      margin: 40px 10%
+
+    .component-fade-enter-active, .component-fade-leave-active 
+      transition: opacity .2s ease
+
+    .component-fade-enter, .component-fade-leave-to
+      opacity: 0
 
 
+  @media screen and (max-width: 1024px)
+    #app
+      grid-template-areas: "content nav"
+      grid-template-columns: 1fr 16%;
+      header
+        .logo
+          display: none
 
+      article.content
+        margin: 80px 50px
+
+      nav
+        padding-top: 80px
+        position: static
+        transform: none
 
 </style>

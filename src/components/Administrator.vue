@@ -3,9 +3,9 @@
         td 
             p {{ name }}
         td
-            p(v-for="type in types") {{type}}
+            p {{ login }}
         td
-            p(v-for="subscription in subscriptions") {{ subscription }}
+            p {{ password }}
         td 
             p +{{ phone }}
 </template>
@@ -14,8 +14,8 @@
 export default {
     props: {
         name: String,
-        types: Array,
-        subscriptions: Array,
+        login: String,
+        password: String,
         phone: Number
     }
 }

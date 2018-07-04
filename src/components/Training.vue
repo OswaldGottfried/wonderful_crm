@@ -19,15 +19,11 @@
 <script>
 import moment from 'moment'
 export default {
-    data() {
-        return {
-            pupils:['Иванов Петя', 'Васильева Юля', 'Петрова Мария', 'Данилов Ильдар', 'Иванов Петя', 'Васильева Юля', 'Петрова Мария', 'Данилов Ильдар']
-        }
-    },
     props: {
-        date: String,
+        date: Date,
         trainingTitle: String,
-        trainer: String
+        trainer: String,
+        pupils: Array
     },
     computed: {
         getDay: function () {
@@ -85,6 +81,5 @@ export default {
                 li
                     grid-column-start: 2
                     margin-top: 10px
-
 </style>
 
