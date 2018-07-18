@@ -1,32 +1,30 @@
 import calendar from '../../api/calendar';
 
 const state = {
-    date: null,
-    trainingTitle: "",
-    trainer: "",
-    pupils: []
+    trainings: []
 }
 
 const getters = {
-    calendar(state) {
-        return state.calendar
-    }
+    getTrainings: state => {
+        return state.trainings
+    },
+    getDate: state => {
+        return state.trainings.map(item => item.date)
+    },
 }
 
 const actions = {
     getAllTrainings( { commit }) {
-        calendar.getTrainings(trainings => {
-            commit('setCalendar', trainings)
-        })
+        commit('setCalendar', calendar.getTrainings())
     }
 }
 
-// eslint-disable-next-line
-console.log(calendar.getTrainings())
-
 const mutations = {
     setCalendar(state, trainings) {
-        state.calendar = trainings
+        state.trainings = trainings
+        // trainings.forEach(element => {
+        //     state.trainings.push(element)
+        // });
     }
 }
 

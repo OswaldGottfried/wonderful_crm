@@ -58,6 +58,8 @@ export default {
   a
     text-decoration: none;
     color: inherit
+    &:hover
+      border-bottom: 1px solid black
 
   ol, ul
     list-style: none;

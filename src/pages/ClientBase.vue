@@ -9,7 +9,7 @@
                     th Абонементы
                     th Телефон
             tbody
-                Client(v-for="client in clients" v-bind="client")
+                Client(v-for="client in clients" v-bind="client" :key="client.id")
 </template>
 
 <script>

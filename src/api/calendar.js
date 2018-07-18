@@ -23,4 +23,8 @@ export default {
     getTrainings() {
         return dates
     }
+
+    //   getProducts(cb) {
+    //       setTimeout(() => cb(dates), 100)
+    //   },
 }
